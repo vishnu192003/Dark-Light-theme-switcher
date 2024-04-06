@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Mode Switcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .img {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .active {
+            border: 3px solid black;
+        }
+
+        .theme-dark {
+            background-color: black;
+            color: white;
+        }
+
+        .theme-light {
+            background-color: white;
+            color: black;
+        }
+
+        .border{
+            border: 3px solid rgb(88, 0, 0) ;
+        }
+
+        .btn {
+            width: 200px;
+            height: 50px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: #ffffff;
+           
+            
+        }
+        
+    </style>
+</head>
+
+<body id="body"><center>
+    <img src="./day-mode.png" alt="" class="img" id="img-light" onclick="lightMode()">
+    <img src="./night-mode.png" alt="" class="img" id="img-dark" onclick="darkMode()">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-3 mx-auto border-color-red ">
+            <div class="shadow m-3 p-3 rounded">
+                <img src="./morning.jpg" height="150vh" alt="" class="d-block mx-auto mb-2 rounded">
+                <h3>Lorem </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, facilis error dolor assumenda enim ea id fugiat ex cum maxime, adipisci placeat molestias praesentium. Asperiores quidem unde natus? Molestias, aspernatur!</p>
+                <button class="btn shadow d-block mx-auto fw-semibold">Learn more</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script>
+        function darkMode() {
+            const imgDark = document.getElementById("img-dark");
+            imgDark.classList.add("active");
+
+            const imgLight = document.getElementById("img-light");
+            imgLight.classList.remove("active");
+
+            const bodyElement = document.getElementById("body");
+            bodyElement.className = "theme-dark";
+
+            const btnBorder = document.getElementById("img-dark"); 
+            btnBorder.classList.add("border");
+        }
+        function lightMode() {
+            const imgDark = document.getElementById("img-dark");
+            imgDark.classList.remove("active");
+
+            const imgLight = document.getElementById("img-light");
+            imgLight.classList.add("active");
+
+            const bodyElement = document.getElementById("body");
+            bodyElement.className = "theme-light";
+
+            const btnBorder = document.getElementById("img-dark"); 
+            btnBorder.classList.remove("border");
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
